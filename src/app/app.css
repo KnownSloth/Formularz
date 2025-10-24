@@ -1,0 +1,72 @@
+.header {
+  background-color: #fff2e6;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header h1, .header p {
+  margin: 0;
+  color: #000;
+  font-weight: 500;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  color: #000;
+}
+
+form label {
+  font-weight: 500;
+  color: #000;
+}
+
+input, select {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  color: #000;
+}
+
+select option {
+  color: #d63434;
+}
+
+input:focus, select:focus {
+  border-color: #d63434;
+  box-shadow: 0 0 5px rgba(214, 52, 52, 0.3);
+}
+
+fieldset {
+  border: 1px solid #d63434;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #000;
+}
+
+.text-danger {
+  color: #d63434;
+  font-size: 0.875rem;
+  margin-top: 3px;
+}
+
+.btn-primary {
+  background-color: #a8d5ba;
+  border-color: #a8d5ba;
+  border-radius: 6px;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #7fbf96;
+  border-color: #7fbf96;
+}
