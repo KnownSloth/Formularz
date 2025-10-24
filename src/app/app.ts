@@ -82,10 +82,7 @@ export class App {
 
   onSubmit() {
   if (this.form.valid) {
-    const performer1 = this.form.value.performer1;
-    const customId = `${performer1.lastName}_${performer1.firstName}`.replace(/\s+/g, '_');
-
-    this.formularzService.saveForm(this.form.value, customId)
+    this.formularzService.saveForm(this.form.value)
       .then(() => alert('Formularz zapisany pomyślnie!'))
       .catch(err => alert('Błąd: ' + err));
   } else {
@@ -93,4 +90,5 @@ export class App {
   }
 }
 }
+
 
