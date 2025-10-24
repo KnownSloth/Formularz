@@ -3,16 +3,11 @@ import { getFirestore, collection, doc, setDoc } from 'firebase/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class FormularzService {
-
   saveForm(data: any) {
     const db = getFirestore();
-
-    const timestamp = new Date().getTime(); 
-    const lastName = data.performer1.lastName.replace(/\s+/g, '_'); 
-    const firstName = data.performer1.firstName.replace(/\s+/g, '_');
-    const docId = `${lastName}_${firstName}_${timestamp}`;
-
-    const docRef = doc(db, 'formularze', docId);
+    const performer1 = data.performer1;
+    const customId = `${performer1.lastName}_${performer1.firstName}_${Date.now()}`.replace(/\s+/g, '_');
+    const docRef = doc(db, 'formularze', customId);
     return setDoc(docRef, data);
   }
 }
