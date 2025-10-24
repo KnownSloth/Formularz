@@ -1,0 +1,157 @@
+<!-- Nagłówek strony -->
+<header class="header">
+  <h1>Konkurs Duetów z Harfą</h1>
+  <p>Wypełnij formularz zgłoszeniowy</p>
+</header>
+
+<!-- Główny kontener formularza -->
+<div class="container mt-4">
+  <h2>{{ title() }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Regulamin -->
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" formControlName="regulationsAgreement" id="regulationsAgreement">
+      <label class="form-check-label" for="regulationsAgreement">
+        Zgłaszam uczestnictwo duetu po zapoznaniu się z regulaminem
+      </label>
+      <div class="text-danger small" *ngIf="form.get('regulationsAgreement')?.touched && form.get('regulationsAgreement')?.invalid">
+        ⚠️ Musisz zaakceptować regulamin.
+      </div>
+    </div>
+
+    <!-- Kategoria -->
+    <div class="mb-3">
+      <label class="form-label">Kategoria</label>
+      <select class="form-select" formControlName="category">
+        <option value="">Wybierz kategorię</option>
+        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+      </select>
+      <div class="text-danger small" *ngIf="form.get('category')?.touched && form.get('category')?.invalid">
+        ⚠️ Wybierz kategorię.
+      </div>
+    </div>
+
+    <!-- Typ harfy -->
+    <div class="mb-3">
+      <label class="form-label">Duet harfy</label>
+      <select class="form-select" formControlName="harpType">
+        <option value="">Wybierz typ harfy</option>
+        <option *ngFor="let h of harpTypes" [value]="h">{{ h }}</option>
+      </select>
+      <div class="text-danger small" *ngIf="form.get('harpType')?.touched && form.get('harpType')?.invalid">
+        ⚠️ Wybierz typ harfy.
+      </div>
+    </div>
+
+    <!-- Dodatkowy instrument -->
+    <div class="mb-3">
+      <label class="form-label">Dodatkowy instrument / głos</label>
+      <input type="text" class="form-control" formControlName="additionalInstrument">
+    </div>
+
+    <!-- Wykonawca 1 -->
+    <fieldset class="border p-3 mb-3" [formGroup]="performer1Group">
+      <legend>Wykonawca HARFA</legend>
+      <!-- Dane osobowe -->
+      <div class="row g-2">
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Nazwisko" formControlName="lastName" required>
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Imię" formControlName="firstName" required>
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" type="email" placeholder="Email" formControlName="email" required>
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Tel." formControlName="phone" type="tel" pattern="^\+?[0-9]*$">
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Miasto" formControlName="city">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Kraj" formControlName="country">
+        </div>
+      </div>
+
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Nauczyciel" formControlName="teacher">
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <input class="form-control" placeholder="Szkoła i adres" formControlName="school">
+      </div>
+    </fieldset>
+
+    <!-- Wykonawca towarzyszący -->
+    <fieldset class="border p-3 mb-3" [formGroup]="performer2Group">
+      <legend>Wykonawca towarzyszący</legend>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Nazwisko" formControlName="lastName">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Imię" formControlName="firstName">
+        </div>
+      </div>
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" type="email" placeholder="Adres e-mail" formControlName="email">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Tel." formControlName="phone" type="tel" pattern="^\+?[0-9]*$">
+        </div>
+      </div>
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Miasto zamieszkania" formControlName="city">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Kraj zamieszkania" formControlName="country">
+        </div>
+      </div>
+      <div class="row g-2 mt-2">
+        <div class="col-md-6">
+          <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" placeholder="Nazwisko i imię nauczyciela" formControlName="teacher">
+        </div>
+      </div>
+      <div class="mt-2">
+        <input class="form-control" placeholder="Pełna nazwa szkoły i jej adres" formControlName="school">
+      </div>
+    </fieldset>
+
+    <!-- Program -->
+    <fieldset class="border p-3 mb-3" [formGroup]="programGroup">
+      <legend>Program</legend>
+      <input class="form-control mb-2" placeholder="Kompozytor" formControlName="composer">
+      <input class="form-control mb-2" placeholder="Tytuł utworu lub jego część" formControlName="title">
+      <input class="form-control mb-2" placeholder="Czas trwania (minuty)" type="number" formControlName="duration">
+    </fieldset>
+
+    <!-- Zgoda RODO -->
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" formControlName="consent" id="consent">
+      <label class="form-check-label" for="consent">
+        Uczestnik konkursu wyraża zgodę na przetwarzanie danych osobowych
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Wyślij formularz</button>
+  </form>
+</div>
