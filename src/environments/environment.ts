@@ -1,11 +1,5 @@
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyDd47mLqny5t-Cn24-CLl7JPeGBjlcbPBM",
-    authDomain: "formularzduet.firebaseapp.com",
-    projectId: "formularzduet",
-    storageBucket: "formularzduet.firebasestorage.app",
-    messagingSenderId: "731171641353",
-    appId: "1:731171641353:web:c3cb71293acba426e700d8"
-  }
+  supabaseUrl: 'https://dnoisarwxjmelabwimrz.supabase.co',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRub2lzYXJ3eGptZWxhYndpbXJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4NDAwOTAsImV4cCI6MjA3NzQxNjA5MH0.0CJWzDKSPee0tXzuQkKaBFY3ohHMK1nRSjXrJeHkNX8'
 };

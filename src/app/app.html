@@ -1,10 +1,7 @@
-<!-- Nagłówek strony -->
 <header class="header">
   <h1>Konkurs Duetów z Harfą</h1>
   <p>Wypełnij formularz zgłoszeniowy</p>
 </header>
-
-<!-- Główny kontener formularza -->
 <div class="container mt-4">
   <h2>{{ title() }}</h2>
 
@@ -23,8 +20,8 @@
 
     <!-- Kategoria -->
     <div class="mb-3">
-      <label class="form-label">Kategoria</label>
-      <select class="form-select" formControlName="category">
+      <label class="form-label" for="category">Kategoria</label>
+      <select class="form-select" id="category" formControlName="category">
         <option value="">Wybierz kategorię</option>
         <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
       </select>
@@ -35,8 +32,8 @@
 
     <!-- Typ harfy -->
     <div class="mb-3">
-      <label class="form-label">Duet harfy</label>
-      <select class="form-select" formControlName="harpType">
+      <label class="form-label" for="harpType">Duet harfy</label>
+      <select class="form-select" id="harpType" formControlName="harpType">
         <option value="">Wybierz typ harfy</option>
         <option *ngFor="let h of harpTypes" [value]="h">{{ h }}</option>
       </select>
@@ -47,102 +44,178 @@
 
     <!-- Dodatkowy instrument -->
     <div class="mb-3">
-      <label class="form-label">Dodatkowy instrument / głos</label>
-      <input type="text" class="form-control" formControlName="additionalInstrument">
+      <label class="form-label" for="additionalInstrument">Dodatkowy instrument / głos</label>
+      <input type="text" class="form-control" id="additionalInstrument" formControlName="additionalInstrument">
     </div>
 
     <!-- Wykonawca 1 -->
     <fieldset class="border p-3 mb-3" [formGroup]="performer1Group">
-      <legend>Wykonawca HARFA</legend>
-      <!-- Dane osobowe -->
-      <div class="row g-2">
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Nazwisko" formControlName="lastName" required>
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Imię" formControlName="firstName" required>
-        </div>
+  <legend>Wykonawca HARFA</legend>
+  <div class="row g-2">
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Nazwisko" formControlName="lastName">
+      <div class="text-danger small" *ngIf="performer1Group.get('lastName')?.touched && performer1Group.get('lastName')?.invalid">
+        ⚠️ Nazwisko jest wymagane.
       </div>
-
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" type="email" placeholder="Email" formControlName="email" required>
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Tel." formControlName="phone" type="tel" pattern="^\+?[0-9]*$">
-        </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Imię" formControlName="firstName">
+      <div class="text-danger small" *ngIf="performer1Group.get('firstName')?.touched && performer1Group.get('firstName')?.invalid">
+        ⚠️ Imię jest wymagane.
       </div>
+    </div>
+  </div>
 
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Miasto" formControlName="city">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Kraj" formControlName="country">
-        </div>
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" type="email" placeholder="Email" formControlName="email">
+      <div class="text-danger small" *ngIf="performer1Group.get('email')?.touched && performer1Group.get('email')?.invalid">
+        ⚠️ Podaj poprawny adres email.
       </div>
-
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Nauczyciel" formControlName="teacher">
-        </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Tel." formControlName="phone">
+      <div class="text-danger small" *ngIf="performer1Group.get('phone')?.touched && performer1Group.get('phone')?.invalid">
+        ⚠️ Podaj poprawny numer telefonu.
       </div>
+    </div>
+  </div>
 
-      <div class="mt-2">
-        <input class="form-control" placeholder="Szkoła i adres" formControlName="school">
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Miasto" formControlName="city">
+      <div class="text-danger small" *ngIf="performer1Group.get('city')?.touched && performer1Group.get('city')?.invalid">
+        ⚠️ Miasto jest wymagane.
       </div>
-    </fieldset>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Kraj" formControlName="country">
+      <div class="text-danger small" *ngIf="performer1Group.get('country')?.touched && performer1Group.get('country')?.invalid">
+        ⚠️ Kraj jest wymagany.
+      </div>
+    </div>
+  </div>
 
-    <!-- Wykonawca towarzyszący -->
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
+      <div class="text-danger small" *ngIf="performer1Group.get('birthDate')?.touched && performer1Group.get('birthDate')?.invalid">
+        ⚠️ Data urodzenia jest wymagana.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Nauczyciel" formControlName="teacher">
+      <div class="text-danger small" *ngIf="performer1Group.get('teacher')?.touched && performer1Group.get('teacher')?.invalid">
+        ⚠️ Nauczyciel jest wymagany.
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <input class="form-control" placeholder="Szkoła i adres" formControlName="school">
+    <div class="text-danger small" *ngIf="performer1Group.get('school')?.touched && performer1Group.get('school')?.invalid">
+      ⚠️ Szkoła jest wymagana.
+    </div>
+  </div>
+</fieldset>
+
+
+    <!-- Wykonawca 2 -->
     <fieldset class="border p-3 mb-3" [formGroup]="performer2Group">
-      <legend>Wykonawca towarzyszący</legend>
-      <div class="row g-2">
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Nazwisko" formControlName="lastName">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Imię" formControlName="firstName">
-        </div>
+  <legend>Wykonawca towarzyszący</legend>
+  <div class="row g-2">
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Nazwisko" formControlName="lastName">
+      <div class="text-danger small" *ngIf="performer2Group.get('lastName')?.touched && performer2Group.get('lastName')?.invalid">
+        ⚠️ Nazwisko jest wymagane.
       </div>
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" type="email" placeholder="Adres e-mail" formControlName="email">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Tel." formControlName="phone" type="tel" pattern="^\+?[0-9]*$">
-        </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Imię" formControlName="firstName">
+      <div class="text-danger small" *ngIf="performer2Group.get('firstName')?.touched && performer2Group.get('firstName')?.invalid">
+        ⚠️ Imię jest wymagane.
       </div>
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Miasto zamieszkania" formControlName="city">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Kraj zamieszkania" formControlName="country">
-        </div>
-      </div>
-      <div class="row g-2 mt-2">
-        <div class="col-md-6">
-          <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
-        </div>
-        <div class="col-md-6">
-          <input class="form-control" placeholder="Nazwisko i imię nauczyciela" formControlName="teacher">
-        </div>
-      </div>
-      <div class="mt-2">
-        <input class="form-control" placeholder="Pełna nazwa szkoły i jej adres" formControlName="school">
-      </div>
-    </fieldset>
+    </div>
+  </div>
 
-    <!-- Program -->
-    <fieldset class="border p-3 mb-3" [formGroup]="programGroup">
-      <legend>Program</legend>
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" type="email" placeholder="Adres e-mail" formControlName="email">
+      <div class="text-danger small" *ngIf="performer2Group.get('email')?.touched && performer2Group.get('email')?.invalid">
+        ⚠️ Podaj poprawny adres email.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Tel." formControlName="phone">
+      <div class="text-danger small" *ngIf="performer2Group.get('phone')?.touched && performer2Group.get('phone')?.invalid">
+        ⚠️ Podaj poprawny numer telefonu.
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Miasto" formControlName="city">
+      <div class="text-danger small" *ngIf="performer2Group.get('city')?.touched && performer2Group.get('city')?.invalid">
+        ⚠️ Miasto jest wymagane.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Kraj" formControlName="country">
+      <div class="text-danger small" *ngIf="performer2Group.get('country')?.touched && performer2Group.get('country')?.invalid">
+        ⚠️ Kraj jest wymagany.
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-2 mt-2">
+    <div class="col-md-6">
+      <input class="form-control" type="date" placeholder="Data urodzenia" formControlName="birthDate">
+      <div class="text-danger small" *ngIf="performer2Group.get('birthDate')?.touched && performer2Group.get('birthDate')?.invalid">
+        ⚠️ Data urodzenia jest wymagana.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" placeholder="Nauczyciel" formControlName="teacher">
+      <div class="text-danger small" *ngIf="performer2Group.get('teacher')?.touched && performer2Group.get('teacher')?.invalid">
+        ⚠️ Nauczyciel jest wymagany.
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <input class="form-control" placeholder="Szkoła i adres" formControlName="school">
+    <div class="text-danger small" *ngIf="performer2Group.get('school')?.touched && performer2Group.get('school')?.invalid">
+      ⚠️ Szkoła jest wymagana.
+    </div>
+  </div>
+</fieldset>
+
+   <!-- Program / Score Files -->
+<fieldset class="border p-3 mb-3">
+  <legend>Program</legend>
+
+  <div formArrayName="programs">
+    <div *ngFor="let program of programs.controls; let i = index" [formGroupName]="i" class="border p-3 mb-3 rounded">
+      <h6>Utwór {{ i + 1 }}</h6>
       <input class="form-control mb-2" placeholder="Kompozytor" formControlName="composer">
       <input class="form-control mb-2" placeholder="Tytuł utworu lub jego część" formControlName="title">
       <input class="form-control mb-2" placeholder="Czas trwania (minuty)" type="number" formControlName="duration">
-    </fieldset>
+      <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProgram(i)" *ngIf="programs.length > 1">
+        Usuń utwór
+      </button>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-outline-primary mt-2" (click)="addProgram()">
+    Dodaj kolejny utwór
+  </button>
+
+  <div class="mt-3">
+  <label class="form-label" for="scoreFiles">Załącz pliki nutowe (PDF)</label>
+  <input type="file" class="form-control" id="scoreFiles" (change)="onScoreFilesSelected($event)" multiple accept=".pdf">
+  </div>
+</fieldset>
 
     <!-- Zgoda RODO -->
     <div class="form-check mb-3">
@@ -150,6 +223,9 @@
       <label class="form-check-label" for="consent">
         Uczestnik konkursu wyraża zgodę na przetwarzanie danych osobowych
       </label>
+      <div class="text-danger small" *ngIf="form.get('consent')?.touched && form.get('consent')?.invalid">
+        ⚠️ Zgoda jest wymagana.
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Wyślij formularz</button>
