@@ -1,0 +1,85 @@
+{
+  "HEADER": {
+    "TITLE": "Konkurs Duetów z Harfą",
+    "SUBTITLE": "Wypełnij formularz zgłoszeniowy"
+  },
+  "FORM": {
+    "TITLE": "Formularz zgłoszeniowy",
+    "REGULATIONS_LABEL": "Zgłaszam uczestnictwo duetu po zapoznaniu się z regulaminem",
+    "REGULATIONS_ERROR": "Musisz zaakceptować regulamin.",
+    
+    "CATEGORY_LABEL": "Kategoria",
+    "CATEGORY_PLACEHOLDER": "Wybierz kategorię",
+    "CATEGORY_ERROR": "Wybierz kategorię.",
+    
+    "HARP_LABEL": "Duet harfy",
+    "HARP_PLACEHOLDER": "Wybierz typ harfy",
+    "HARP_ERROR": "Wybierz typ harfy.",
+    
+    "ADDITIONAL_LABEL": "Dodatkowy instrument / głos",
+    "ADDITIONAL_PLACEHOLDER": "Wybierz dodatkowy instrument / głos",
+    
+    "PERFORMER1": {
+      "TITLE": "Wykonawca HARFA"
+    },
+    "PERFORMER2": {
+      "TITLE": "Wykonawca towarzyszący"
+    },
+    
+    "LASTNAME": "Nazwisko",
+    "LASTNAME_ERROR": "Nazwisko jest wymagane.",
+    
+    "FIRSTNAME": "Imię",
+    "FIRSTNAME_ERROR": "Imię jest wymagane.",
+    
+    "EMAIL": "Adres e-mail",
+    "EMAIL_ERROR": "Podaj poprawny adres e-mail.",
+    
+    "PHONE": "Telefon",
+    "PHONE_ERROR": "Podaj poprawny numer telefonu.",
+    
+    "CITY": "Miasto",
+    "CITY_ERROR": "Miasto jest wymagane.",
+    
+    "COUNTRY": "Kraj",
+    "COUNTRY_ERROR": "Kraj jest wymagany.",
+    
+    "BIRTHDATE": "Data urodzenia",
+    "BIRTHDATE_ERROR": "Data urodzenia jest wymagana.",
+    
+    "TEACHER": "Nauczyciel",
+    "TEACHER_ERROR": "Nauczyciel jest wymagany.",
+    
+    "SCHOOL": "Szkoła i adres",
+    "SCHOOL_ERROR": "Szkoła jest wymagana.",
+    
+    "PROGRAM": {
+      "TITLE": "Program",
+      "ITEM": "Utwór",
+      "COMPOSER": "Kompozytor",
+      "TITLE_FIELD": "Tytuł utworu lub jego część",
+      "DURATION": "Czas trwania (minuty)",
+      "REMOVE": "Usuń utwór",
+      "ADD": "Dodaj kolejny utwór",
+      "SCORES": "Załącz pliki nutowe (PDF)"
+    },
+    
+    "CONSENT_LABEL": "Uczestnik konkursu wyraża zgodę na przetwarzanie danych osobowych",
+    "CONSENT_ERROR": "Zgoda jest wymagana.",
+    
+    "SUBMIT": "Wyślij formularz",
+    "SUBMIT_SUCCESS": "Formularz został pomyślnie wysłany!",
+    "SUBMIT_ERROR": "Wystąpił błąd podczas wysyłania formularza.",
+    "FORM_TITLE": "Formularz zgłoszeniowy",
+
+    "I duet w wieku do lat 9": "I duet w wieku do lat 9",
+    "II duet w wieku do lat 13": "II duet w wieku do lat 13",
+    "III duet w wieku do lat 16": "III duet w wieku do lat 16",
+    "IV duet w wieku do lat 19": "IV duet w wieku do lat 19",
+    "V duet w wieku do lat 26": "V duet w wieku do lat 26",
+    "VI duet wykonujący prawykonanie w konkursie kompozytorskim": "VI duet wykonujący prawykonanie w konkursie kompozytorskim",
+
+    "Harfa pedałowa": "Harfa pedałowa",
+    "Harfa haczykowa": "Harfa haczykowa"
+  }
+}

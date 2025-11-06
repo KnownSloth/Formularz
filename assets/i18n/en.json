@@ -1,0 +1,85 @@
+{
+  "HEADER": {
+    "TITLE": "Harp Duet Competition",
+    "SUBTITLE": "Fill out the registration form"
+  },
+  "FORM": {
+    "TITLE": "Registration Form",
+    "REGULATIONS_LABEL": "I confirm participation after reading the regulations",
+    "REGULATIONS_ERROR": "You must accept the regulations.",
+    
+    "CATEGORY_LABEL": "Category",
+    "CATEGORY_PLACEHOLDER": "Select a category",
+    "CATEGORY_ERROR": "Please select a category.",
+    
+    "HARP_LABEL": "Harp duet",
+    "HARP_PLACEHOLDER": "Select harp type",
+    "HARP_ERROR": "Please select a harp type.",
+    
+    "ADDITIONAL_LABEL": "Additional instrument / voice",
+    "ADDITIONAL_PLACEHOLDER": "Select additional instrument / voice",
+    
+    "PERFORMER1": {
+      "TITLE": "Performer – HARP"
+    },
+    "PERFORMER2": {
+      "TITLE": "Accompanying Performer"
+    },
+    
+    "LASTNAME": "Last name",
+    "LASTNAME_ERROR": "Last name is required.",
+    
+    "FIRSTNAME": "First name",
+    "FIRSTNAME_ERROR": "First name is required.",
+    
+    "EMAIL": "Email address",
+    "EMAIL_ERROR": "Please enter a valid email address.",
+    
+    "PHONE": "Phone",
+    "PHONE_ERROR": "Please enter a valid phone number.",
+    
+    "CITY": "City",
+    "CITY_ERROR": "City is required.",
+    
+    "COUNTRY": "Country",
+    "COUNTRY_ERROR": "Country is required.",
+    
+    "BIRTHDATE": "Date of birth",
+    "BIRTHDATE_ERROR": "Date of birth is required.",
+    
+    "TEACHER": "Teacher",
+    "TEACHER_ERROR": "Teacher is required.",
+    
+    "SCHOOL": "School and address",
+    "SCHOOL_ERROR": "School is required.",
+    
+    "PROGRAM": {
+      "TITLE": "Program",
+      "ITEM": "Piece",
+      "COMPOSER": "Composer",
+      "TITLE_FIELD": "Title or part of the piece",
+      "DURATION": "Duration (minutes)",
+      "REMOVE": "Remove piece",
+      "ADD": "Add another piece",
+      "SCORES": "Attach score files (PDF)"
+    },
+    
+    "CONSENT_LABEL": "The participant agrees to the processing of personal data",
+    "CONSENT_ERROR": "Consent is required.",
+    
+    "SUBMIT": "Submit form",
+    "SUBMIT_SUCCESS": "Form submitted successfully!",
+    "SUBMIT_ERROR": "An error occurred while submitting the form.",
+
+    "Harfa pedałowa": "Pedal harps",
+    "Harfa haczykowa": "Lever harps",
+
+    "I duet w wieku do lat 9": "I duet – up to age 9",
+    "II duet w wieku do lat 13": "II duet – up to age 13",
+    "III duet w wieku do lat 16": "III duet – up to age 16",
+    "IV duet w wieku do lat 19": "IV duet – up to age 19",
+    "V duet w wieku do lat 26": "V duet – up to age 26",
+    "VI duet wykonujący prawykonanie w konkursie kompozytorskim": "VI duet performing a premiere in the composition competition"
+  
+  }
+}
